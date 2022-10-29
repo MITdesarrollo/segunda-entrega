@@ -1,0 +1,38 @@
+.contTool {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-top: 2rem;
+}
+
+.logoLeft {
+    margin-left: 2rem;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    background: #5CE1E6;
+    background: linear-gradient(#5CE1E6, #FFDE59);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 2rem;
+}
+
+img {
+    width: 2.5rem;
+}
+
+.toolBarcenter button {
+    margin-left: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(#5CE1E6, #FFDE59);
+    padding: .5rem;
+    color: white;
+}
+
+.loginUsuario {
+    margin-right: 2rem;
+
+}

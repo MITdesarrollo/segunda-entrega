@@ -1,0 +1,27 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-row: auto auto;
+  }
+  
+  .header {
+    grid-column: 1/8;
+    background-color: #2f2e30;
+  }
+  
+  .menu {
+    grid-column: 1/2;/* 
+    background-color: #2f2e30; */
+    border-right: 1px solid white;
+    min-height: 100vh;
+    
+   
+  }
+  
+  
+  .main {
+    grid-column: 2/8;
+    /* background-color: #101728; */
+    min-height: 100vh;
+    margin-top: 2rem;
+  }

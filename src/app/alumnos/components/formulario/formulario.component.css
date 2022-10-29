@@ -1,0 +1,14 @@
+h1{
+    color: white;
+    border-bottom: 1px solid white;
+    margin-top: 2rem;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.boton{
+    background-color: #5CE1E6;
+}
+.boton2{
+    background-color: #FFDE59;
+}
