@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Curso } from '../../models/curso';
+import { CursoService } from '../../services/curso.service';
 
 @Component({
   selector: 'app-detalle-curso',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleCursoComponent implements OnInit {
 
-  constructor() { }
+  curso$!: Observable<Curso>
+
+  constructor(
+    private activateRoute : ActivatedRoute,
+    private cursoService: CursoService
+  ) { }
 
   ngOnInit(): void {
+    this.activateRoute.paramMap.subscribe((parametros)=> {
+      let id = parseInt(parametros.get('id') || '0');
+      this.curso$ = this.cursoService.obtenerCurso(id)
+      console.log(parametros.get('id'));  
+    })
   }
 
 }

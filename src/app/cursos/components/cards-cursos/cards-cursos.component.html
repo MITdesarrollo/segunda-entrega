@@ -100,7 +100,7 @@
                         <button mat-icon-button (click)="eliminarCurso(curso.id)">
                             <mat-icon>delete</mat-icon>
                         </button>
-                        <button mat-icon-button>
+                        <button mat-icon-button  [routerLink]="'/'+ curso.id">
                             <mat-icon>visibility</mat-icon>
                         </button>
                     </mat-card-actions>
