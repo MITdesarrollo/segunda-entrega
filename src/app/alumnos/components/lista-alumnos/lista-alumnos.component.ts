@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+
 import { Subscription } from 'rxjs';
-import { Usuario } from '../../models/usuario';
+import { Alumno } from '../../models/alumno';
+
 import { AlumnosService } from '../../services/alumnos.service';
 
 
@@ -13,33 +14,33 @@ import { AlumnosService } from '../../services/alumnos.service';
 export class ListaAlumnosComponent implements OnInit, OnDestroy{
 
 
-  usuarios!: Usuario[];
-  usuariosSubcription!: Subscription
+  alumnos!: Alumno[];
+  alumnosSubcription!: Subscription
   
   constructor(
     private usuarioData: AlumnosService
   ) {}
 
   ngOnInit(): void {
-    this.usuarioData.usuariosData().subscribe(usuario => this.usuarios = usuario);
+    this.usuarioData.alumnosData().subscribe(alumno => this.alumnos =alumno);
   }
   ngOnDestroy(): void{
-    if(this.usuariosSubcription){
-      this.usuariosSubcription.unsubscribe();
+    if(this.alumnosSubcription){
+      this.alumnosSubcription.unsubscribe();
     }
 }
   // funcion para asignarle un id a evento recibido y pushearlo al array que recibe el hijo
   agregarUsuario($event: any): void{
     let i:number= 0;
-     for(let item of this.usuarios){
+     for(let item of this.alumnos){
       i++
      }
     $event.id = i
-    this.usuarios.push($event)  
+    this.alumnos.push($event)  
   }
 
  // delete de la fila por id
   deleteItem(i: number) {
-    this.usuarios = this.usuarios.filter(item => item.id !== i)
+    this.alumnos = this.alumnos.filter(item => item.id !== i)
   }
 }

@@ -4,11 +4,13 @@ import {CardsCursosComponent} from "./components/cards-cursos/cards-cursos.compo
 import {EditarCursoComponent} from "./components/editar-curso/editar-curso.component";
 import {AgregarCursoComponent} from "./components/agregar-curso/agregar-curso.component";
 import {DetalleCursoComponent} from "./components/detalle-curso/detalle-curso.component";
+import { AdminGuard } from '../core/guards/admin.guard';
+import { AutenticacionGuard } from '../core/guards/autenticacion.guard';
 
 const routes: Routes = [
   {path: '', component: CardsCursosComponent, children:[
       {path:'editar', component: EditarCursoComponent},
-      {path:'agregar', component: AgregarCursoComponent},
+      {path:'agregar', component: AgregarCursoComponent, canActivate:[AdminGuard,AutenticacionGuard]},
       {path:':id', component: DetalleCursoComponent},
     ]}
 ];

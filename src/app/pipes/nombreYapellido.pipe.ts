@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Usuario } from 'src/app/alumnos/models/usuario';
+import { Alumno } from '../alumnos/models/alumno';
+
 
 @Pipe({
   name: 'nombreYapellido'
 })
 export class ApellidoPipe implements PipeTransform {
 /* pipe personalizado */
-  transform(value: Usuario): string{
+  transform(value: Alumno): string{
 
     return `${value.nombre} ${value.apellido}` ;
   }

@@ -1,7 +1,8 @@
 import { Component, EventEmitter, OnInit, Output, OnDestroy } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Usuario } from '../../models/usuario';
+import { Alumno } from '../../models/alumno';
+
 import { AlumnosService } from '../../services/alumnos.service';
 
 
@@ -14,8 +15,8 @@ export class FormularioComponent implements OnInit, OnDestroy {
 
   promesa: any;
   //vars
-  usuarios!: Usuario[];
-  usuariosSubcription!: Subscription
+  alumnos!: Alumno[];
+  alumnosSubcription!: Subscription
   
   formulario = this.formBuilder.group({
     nombre: ['', [Validators.required]],
@@ -32,27 +33,27 @@ export class FormularioComponent implements OnInit, OnDestroy {
   ) { } 
 
   ngOnInit(): void {
-   this.usuariosSubcription = this.alumnoService.usuariosData().subscribe(alumno => this.usuarios = alumno);
+   this.alumnosSubcription = this.alumnoService.alumnosData().subscribe(alumno => this.alumnos = alumno);
   }
   
   ngOnDestroy(): void{
-      if(this.usuariosSubcription){
-        this.usuariosSubcription.unsubscribe();
+      if(this.alumnosSubcription){
+        this.alumnosSubcription.unsubscribe();
       }
   }
   
 
-  agregarUsuario($event: any): void{
+  agregarAlumno($event: any): void{
      let i:number= 0;
-     for(let item of this.usuarios){ i++ } 
+     for(let item of this.alumnos){ i++ } 
      $event.id = i
-     this.usuarios.push($event) 
+     this.alumnos.push($event) 
     }
     
 
   //declaracion metodo submit
   submitForm(): void{
-    this.agregarUsuario(this.formulario.value);
+    this.agregarAlumno(this.formulario.value);
     this.formulario.reset()
   }
   

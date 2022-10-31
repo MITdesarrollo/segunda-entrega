@@ -94,12 +94,16 @@
                     </mat-card-content>
                   
                     <mat-card-actions align="end">
+                        <div *ngIf="sesion$ | async as sesion">
+                            <div *ngIf="sesion.usuarioActivo?.admin">
                         <button mat-icon-button  (click)="editarCurso(curso)">
                               <mat-icon>edit</mat-icon>
                         </button>
                         <button mat-icon-button (click)="eliminarCurso(curso.id)">
                             <mat-icon>delete</mat-icon>
                         </button>
+                           </div>
+                        </div>
                         <button mat-icon-button  [routerLink]="'/'+ curso.id">
                             <mat-icon>visibility</mat-icon>
                         </button>

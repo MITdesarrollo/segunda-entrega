@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Usuario } from '../models/usuario';
+import { Alumno } from '../models/alumno';
+
 
 @Injectable()
 export class AlumnosService {
-  usuarios: Usuario []=[
+  alumnos: Alumno []=[
     { id:0, nombre:'Juan', apellido:'Gomez', cursos:'React Js'},
     { id:1, nombre:'Juana',  apellido:'Perez', cursos:'Angular'}
    ];
   constructor() { }
   
-  usuariosData(): Observable<Usuario[]>{
-    return of(this.usuarios)
+  alumnosData(): Observable<Alumno[]>{
+    return of(this.alumnos)
   }
 }
 
