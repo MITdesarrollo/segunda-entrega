@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './core/components/home/home.component';
 import { PaginaNoEncontradaComponent } from './core/components/pagina-no-encontrada/pagina-no-encontrada.component';
 import { AutenticacionGuard } from './core/guards/autenticacion.guard';
+import { CursosModule } from './cursos/cursos.module';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AutenticacionGuard]},
@@ -20,7 +21,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    CursosModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

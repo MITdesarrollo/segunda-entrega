@@ -1,18 +1,23 @@
 
-  
+  <ng-container *ngIf=" (sesion$ | async) as sesion">
     <div class="contTool">
       <div class="logoLeft">
         <h1>M I T Cursos</h1>
       </div>
       <div class="toolBarcenter">
-        <h3>{{ sesion$ | async | json }}</h3>
+        
       </div>
       <div class="loginUsuario">
-        <a mat-icon-button routerLink="login">
-          <mat-icon>account_box</mat-icon>
-        </a>
-       
+        <div class="bienvenido">
+          <p>Bienvenid@! {{ sesion.usuarioActivo?.nombre }}</p>
+        </div>
+        <div>
+          <a mat-icon-button routerLink="login">
+            <mat-icon>account_box</mat-icon>
+          </a>
+        </div>
+        
       </div>
     </div>
   
-  
+  </ng-container>

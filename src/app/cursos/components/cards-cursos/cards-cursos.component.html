@@ -94,19 +94,18 @@
                     </mat-card-content>
                   
                     <mat-card-actions align="end">
-                        <div *ngIf="sesion$ | async as sesion">
-                            <div *ngIf="sesion.usuarioActivo?.admin">
-                        <button mat-icon-button  (click)="editarCurso(curso)">
+                        <div *ngIf="(sesion$ | async) as sesion">
+                            
+                        <button mat-icon-button  (click)="editarCurso(curso)" *ngIf="sesion.usuarioActivo?.admin">
                               <mat-icon>edit</mat-icon>
                         </button>
-                        <button mat-icon-button (click)="eliminarCurso(curso.id)">
+                        <button mat-icon-button (click)="eliminarCurso(curso.id)" *ngIf="sesion.usuarioActivo?.admin">
                             <mat-icon>delete</mat-icon>
                         </button>
-                           </div>
-                        </div>
                         <button mat-icon-button  [routerLink]="'/'+ curso.id">
                             <mat-icon>visibility</mat-icon>
                         </button>
+                    </div>
                     </mat-card-actions>
                 </mat-card> 
             </div>

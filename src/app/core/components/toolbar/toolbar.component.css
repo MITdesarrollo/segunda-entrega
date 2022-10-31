@@ -19,20 +19,12 @@ h1 {
     font-size: 2rem;
 }
 
-img {
-    width: 2.5rem;
-}
-
-.toolBarcenter button {
-    margin-left: 1rem;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(#5CE1E6, #FFDE59);
-    padding: .5rem;
-    color: white;
-}
-
 .loginUsuario {
+    display: flex;
+    justify-content: space-between;
     margin-right: 2rem;
 
+}
+.bienvenido p{
+   
 }
