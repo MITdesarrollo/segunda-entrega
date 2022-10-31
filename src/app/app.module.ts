@@ -18,8 +18,6 @@ import { AlumnosModule } from './alumnos/alumnos.module';
   imports: [
     BrowserModule,
     LoginModule,
-    CursosModule,
-    AlumnosModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,

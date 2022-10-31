@@ -7,9 +7,7 @@ import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.
 
 
 const routes: Routes = [
-  {
-    path:'alumnos', loadChildren: ()=> import('./alumnos.module').then((m)=> m.AlumnosModule), canActivate: [AutenticacionGuard]
-  },
+  
   {path:'',component: ListaAlumnosComponent, children:[
     {path:'agregar', component: FormularioComponent},
     {path:'editar', component: EditarAlumnoComponent}

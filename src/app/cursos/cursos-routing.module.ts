@@ -8,9 +8,11 @@ import { AdminGuard } from '../core/guards/admin.guard';
 import { AutenticacionGuard } from '../core/guards/autenticacion.guard';
 
 const routes: Routes = [
-  {
-    path:'cursos', loadChildren: ()=> import('./cursos.module').then((m)=> m.CursosModule), canActivate: [AutenticacionGuard]
-  }
+  {path: '', component: CardsCursosComponent, children:[
+      {path:'editar', component: EditarCursoComponent},
+      {path:'agregar', component: AgregarCursoComponent, canActivate:[AdminGuard,AutenticacionGuard]},
+      {path:':id', component: DetalleCursoComponent},
+    ]}
 ];
 
 @NgModule({

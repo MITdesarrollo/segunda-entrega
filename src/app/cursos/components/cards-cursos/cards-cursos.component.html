@@ -1,5 +1,6 @@
 <p>cards-cursos works!</p>
 
+<a mat-button routerLink="cursos/agregar" >agregar curso</a>
 
 <div class="container">
     <div class="row">
@@ -9,7 +10,7 @@
             <input type="text" matInput [(ngModel)]="filtro" />
         </mat-form-field>
         <div class="col-md-6">
-           
+            
         </div>
        <!--  <mat-form-field class="col-md-6">
             <mat-label>Filtrar por numero de comision</mat-label>
@@ -17,58 +18,7 @@
         </mat-form-field> -->
     </div>
     <!-- tabla cursos  -->
-    <!-- <div class="cont">
-        <div class="row">
-            <table mat-table [dataSource]="dataSource" class="col-md-12">
-                
-                <ng-container matColumnDef="nombre">
-                    <th mat-header-cell *matHeaderCellDef>Nombre</th>
-                    <td mat-cell *matCellDef="let curso">{{ curso.nombre | uppercase }}</td>
-                </ng-container>
     
-               
-                <ng-container matColumnDef="comision">
-                    <th mat-header-cell *matHeaderCellDef>Comision</th>
-                    <td mat-cell *matCellDef="let curso">{{ curso.comision }}</td>
-                </ng-container>
-    
-                
-                <ng-container matColumnDef="profesor">
-                    <th mat-header-cell *matHeaderCellDef>Profesor</th>
-                    <td mat-cell *matCellDef="let curso">{{ curso.profesor }}</td>
-                </ng-container>
-    
-                
-                <ng-container matColumnDef="fechaInicio">
-                    <th mat-header-cell *matHeaderCellDef>Inicia</th>
-                    <td mat-cell *matCellDef="let curso">
-                        {{ curso.fechaInicio | date: "dd/MM/YYYY" }}
-                    </td>
-                </ng-container>
-    
-               
-                <ng-container matColumnDef="fechaFin">
-                    <th mat-header-cell *matHeaderCellDef>Finaliza</th>
-                    <td mat-cell *matCellDef="let curso">
-                        {{ curso.fechaFin | date: "dd/MM/YYYY" }}
-                    </td>
-                </ng-container>
-    
-                
-                <ng-container matColumnDef="inscripcionAbierta">
-                    <th mat-header-cell *matHeaderCellDef>Inscripcion Abierta</th>
-                    <td mat-cell *matCellDef="let curso">
-                        <span [appBooleanoEstilo]="curso.inscripcionAbierta">
-                            {{ curso.inscripcionAbierta | booleanoTexto: "Si":"No" }}
-                        </span>
-                    </td>
-                </ng-container>
-    
-                <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-                <tr mat-row *matRowDef="let row; columns: columnas"></tr>
-            </table>
-        </div>
-    </div> -->
     
     
     <!-- cards cursos -->
